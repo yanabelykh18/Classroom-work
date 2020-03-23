@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <math.h>
-typedef struct //Создание структуры
+typedef struct //РЎРѕР·РґР°РЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹
 {
 	int a;
 	int b;
 	double mod;
 } Chislo;
 
-void inputChilso(Chislo* x, FILE* f) //Считывание числа из файла
+void inputChilso(Chislo* x, FILE* f) //РЎС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃР»Р° РёР· С„Р°Р№Р»Р°
 {
 	fscanf_s(f, "%d", &(x->a));
 	fscanf_s(f, "%d", &(x->b));
 	x->mod = sqrt(pow(x->a, 2) + pow(x->b, 2));
 }
-Chislo* inputMassChislo(int* size, char* f) //Считывание массива
+Chislo* inputMassChislo(int* size, char* f) //РЎС‡РёС‚С‹РІР°РЅРёРµ РјР°СЃСЃРёРІР°
 {
 	FILE* input;
 	fopen_s(&input, f, "r");
@@ -30,11 +30,11 @@ Chislo* inputMassChislo(int* size, char* f) //Считывание массива
 	fclose(input);
 	return result;
 }
-void outputChislo(Chislo* c) //Вывод комплексного числа
+void outputChislo(Chislo* c) //Р’С‹РІРѕРґ РєРѕРјРїР»РµРєСЃРЅРѕРіРѕ С‡РёСЃР»Р°
 {
-	printf("%d+%di\n \t модуль =%f\n", c->a, c->b, c->mod);
+	printf("%d+%di\n \t РјРѕРґСѓР»СЊ =%f\n", c->a, c->b, c->mod);
 }
-void outputMassChislo(Chislo* mass, int size) //Вывод в консоль
+void outputMassChislo(Chislo* mass, int size) //Р’С‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ
 {
 	for (int i = 0; i < size; ++i)
 	{
@@ -52,19 +52,19 @@ void outputBiggestChislo(Chislo* m, int size)
 		}
 
 	}
-	printf(" больший модуль %f\n", biggestmod);
+	printf("Р‘РѕР»СЊС€РёР№ РјРѕРґСѓР»СЊ %f\n", biggestmod);
 	for (int i = 0; i < size; i++)
 	{
 		if (sqrt(pow(m[i].a, 2) + pow(m[i].b, 2)) == biggestmod)
 		{
-			printf("большое по модулю %d+%di\n", m[i].a, m[i].b);
+			printf("Р‘РѕР»СЊС€РµРµ РїРѕ РјРѕРґСѓР»СЋ %d+%di\n", m[i].a, m[i].b);
 		}
 	}
 
 }
 int main()
 {
-	/*Задание 1. Считать комплексные числа из файла, вывести в консоль в виде a+bi
+	/*Р—Р°РґР°РЅРёРµ 1. РЎС‡РёС‚Р°С‚СЊ РєРѕРјРїР»РµРєСЃРЅС‹Рµ С‡РёСЃР»Р° РёР· С„Р°Р№Р»Р°, РІС‹РІРµСЃС‚Рё РІ РєРѕРЅСЃРѕР»СЊ РІ РІРёРґРµ a+bi
 	setlocale(LC_ALL, "Rus");
     int size;
     Chislo* input = 0;
@@ -74,13 +74,13 @@ int main()
     free(input);
     system("pause");
 	*/
-	/* Задание 2. Реализовать безопасный ввод пароля в консоль (отображение звёздочек вместо печатаемых символов).
+	/* Р—Р°РґР°РЅРёРµ 2. Р РµР°Р»РёР·РѕРІР°С‚СЊ Р±РµР·РѕРїР°СЃРЅС‹Р№ РІРІРѕРґ РїР°СЂРѕР»СЏ РІ РєРѕРЅСЃРѕР»СЊ (РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ Р·РІС‘Р·РґРѕС‡РµРє РІРјРµСЃС‚Рѕ РїРµС‡Р°С‚Р°РµРјС‹С… СЃРёРјРІРѕР»РѕРІ).
 	setlocale(LC_ALL, "rus");
-	printf("Введите количество символов в пароле :\n");
+	printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ РІ РїР°СЂРѕР»Рµ :\n");
 	int n, i;
 	scanf_s("%d", &n);
 	char* password = (char*)malloc(n * sizeof(char));
-	printf("Введите пароль:\n");
+	printf("Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:\n");
 	for (i = 0; (password[i] = getch()) != '\r';)
 	{
 		if (password[i] == '\b' && i != 0) {
