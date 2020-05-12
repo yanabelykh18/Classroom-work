@@ -13,7 +13,7 @@ int main()
 {
 	      setlocale(LC_ALL, "Rus");
 	      FILE* A;
-	     fopen_s(&A, "E:\\123\\A.txt", "r");
+	     fopen_s(&A, "A.txt", "r");
 	int number;
 	fscanf_s(A, "%d", &number);
 	person* MASS;
