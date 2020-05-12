@@ -2,7 +2,7 @@
 #include<windows.h>
 #include <locale.h>
 
-typedef struct 
+typedef struct     //Задание 1.
 {
 	int age;
 	char name[20];
@@ -93,7 +93,7 @@ int main()
 #include<stdlib.h>
 #include<locale.h>
 
-int main() 
+int main()                //Задание 2.
 {
 	char a = 0;
 	while (a != '\n') 
