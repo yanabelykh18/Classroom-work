@@ -3,7 +3,7 @@
 #include <locale.h> 
 #include <windows.h>
 
-
+//Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 1
 int DeletePovtori(int* mass, int n) {
 	for (int j = 0; j < n; j += 1) {
 		for (int i = j + 1; i < n; i += 1) {
@@ -38,11 +38,12 @@ void bubble(int* num, int size)
 	}
 }
 
+//Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 2
 int main()
 {
 	setlocale( LC_ALL,"rus");
 	
-	printf("ââåäèòå ðàçìåð\n ïîæàëóéñòà\n ");
+	printf("Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã Ã§Ã¬Ã¥Ã°\n Ã¯Ã®Ã¦Ã Ã«Ã³Ã©Ã±Ã²Ã \n ");
 	int a;
 	scanf_s("%d", &a);
 	
